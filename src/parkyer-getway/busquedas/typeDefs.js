@@ -30,11 +30,30 @@
     geometry:String
       
 }
+type Paradero
+{
+    direccion_paradero:String
+    ruta_sae: Int
+    ruta_comercial: [String]
+    linea:Int 
+    cenefa_paradero: String
+    nombre_paradero: Int
+    posy: Int
+    posicion: Int 
+    posx:Int
+    nodo: Int
+    geopoint: String
+      
+}
+
+
+
 `;
 
 
 
 export const rutasQueries = `
     getIdRuta(routeID: Int!): propiedades
+    getIdparadero(routeID: Int!): [Paradero]
 `;
 
