@@ -8,21 +8,21 @@ const paraderos ='bus_stop';
 const resolvers = {
 	Query: {
 		//CUSTOM ENDPONTS
-		getIdRuta:(_, { id })=> //endpoint para traer ruta
-			generalRequest(`${URL}/${GET_USER}/${id}`, 'GET'),
+		getIdRuta:(_, { route_id_ruta_zonal })=> //endpoint para traer ruta
+			generalRequest(`${URL}/${ruta}/${route_id_ruta_zonal}`, 'GET'),
 
 		//EXAMPLE ENDPOINTS
 		/*allCategories: (_) =>
 			getRequest(URL, ''),
 		categoryById: (_, { id }) =>
 			generalRequest(`${URL}/${id}`, 'GET'),*/
+
+		
+
 		
 	},
-	Mutation: {
-		//CUSTOM ENDPONTS
-		createUser:(_, {user})=>
-			generalRequest(`${URL}/${Lista}`,'POST',user),//endpoint para crear usuario
-	}
+	
+	
 };
 
 export default resolvers;

@@ -1,57 +1,50 @@
 
-  export const profileTypeDef =  `
-  type User {
-    id: Int!
-    name: String!
-    last_name: String!
-    email: String!
-    password: String!
-    phone: Int!
-    payment_method: Int!
-    address: String!
-}
-input UserInput {
-    name: String!
-    last_name: String!
-    email: String!
-    password: String!
-    phone: Int!
-    payment_method: Int!
-    address: String!
-}
-input EditUser{
-    name: String!
-    last_name: String!
-    email: String!
-    phone: Int!
-    address: String! 
-}
-input PasswordInput {
-    password: String!
-}
-input PaymentInput {
-    payment_method: String!
-}`;
+  export const rutasTypeDef =  `
+  type properties {
+    idoperador_ruta_zonal: String
+    fecha_implementacion_ruta_zonal: String
+    tipo_ruta_zonal: Int!
+    localidad_origen_ruta_zonal: Int!
+    delega_ruta_zonal: Int!
+    zona_origen_ruta_zonal: Int!
+    route_id_ruta_zonal: Int!
+    objectid: Int!
+    origen_ruta_zonal: String!
+    longitud_ruta_zonal: Float!
+    localidad_destino_ruta_zonal: Int!
+    destino_ruta_zonal: String!
+    denominacion_ruta_zonal: String!
+    tipo_servicio_ruta_zonal: Int!
+    zona_destino_ruta_zonal: Int!
+    globalid: String!
+    route_name_ruta_zonal: String!
+    codigo_definitivo_ruta_zonal: String!
 
-/*export const profileQueries = `
-      allCategories: [User]!
-      categoryById(id: Int!): Category!
-  `;
-*/
-export const profileQueries = `
-    getUser(id: Int!): User!
+}
+input propertiesInput {
+        idoperador_ruta_zonal: String
+        fecha_implementacion_ruta_zonal: String
+        tipo_ruta_zonal: Int
+        localidad_origen_ruta_zonal: Int!
+        delega_ruta_zonal: Int!
+        zona_origen_ruta_zonal: Int!
+        route_id_ruta_zonal: Int!
+        objectid: Int!
+        origen_ruta_zonal: String!
+        longitud_ruta_zonal: Float!
+        localidad_destino_ruta_zonal: Int!
+        destino_ruta_zonal: String!
+        denominacion_ruta_zonal: String!
+        tipo_servicio_ruta_zonal: Int!
+        zona_destino_ruta_zonal: Int!
+        globalid: String!
+        route_name_ruta_zonal: String!
+        codigo_definitivo_ruta_zonal: String!
+    }`;
+
+
+
+export const rutasQueries = `
+    getIdRuta(route_id_ruta_zonal: Int!): properties!
 `;
 
-/*export const profileMutations = `
-    createCategory(category: CategoryInput!): Category!
-    updateCategory(id: Int!, category: CategoryInput!): Category!
-    deleteCategory(id: Int!): Int
-`;*/
-
-export const profileMutations = `
-    createUser(user: UserInput!): User!
-    updateUser(id: Int!, user: EditUser!): User!
-    changePassword(id: Int!, password: PasswordInput!): User!
-    addPaymentMethod(id: Int!, payment: PaymentInput!): User!
-    deleteUser(id: Int!): User!
-`;

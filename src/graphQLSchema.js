@@ -9,6 +9,13 @@ import {
 	profileQueries,
 	profileTypeDef
 } from './parkyer-getway/profile/typeDefs';
+//julio_______________
+import {
+	rutasQueries,
+	rutasTypeDef
+} from './parkyer-getway/busquedas/typeDefs';
+//____________________
+
 import {
 	quejasMutations,
 	quejasQueries,
@@ -46,7 +53,7 @@ import vehicleResolvers from './parkyer-getway/vehicles/resolvers';
 import contactoResolvers from './parkyer-getway/contacto/resolvers';
 import admin2Resolvers from './parkyer-getway/administration_two/resolvers';
 import UsuariosResolvers from './parkyer-getway/Usuarios/resolvers';
-
+import busquedasResolvers from './parkyer-getway/busquedas/resolvers';
 // merge the typeDefs
 const mergedTypeDefs = mergeSchemas(
 	[
@@ -57,7 +64,8 @@ const mergedTypeDefs = mergeSchemas(
 		vehicleTypeDef,
 		contactoTypeDef,
 		admin2TypeDef,
-		UsuariosTypeDef
+		UsuariosTypeDef,
+		rutasTypeDef
 	],
 	[
 		profileQueries,
@@ -66,7 +74,8 @@ const mergedTypeDefs = mergeSchemas(
 		vehicleQueries,
 		contactoQueries,
 		admin2Queries,
-		UsuariosQueries
+		UsuariosQueries,
+		rutasQueries
 	],
 	[
 		profileMutations,
@@ -90,6 +99,7 @@ export default makeExecutableSchema({
 		vehicleResolvers,
 		contactoResolvers,
 		admin2Resolvers,
-		UsuariosResolvers
+		UsuariosResolvers,
+		busquedasResolvers
 	)
 });
