@@ -8,8 +8,8 @@ const paraderos ='bus_stop';
 const resolvers = {
 	Query: {
 		//CUSTOM ENDPONTS
-		getIdRuta:(_, { route_id_ruta_zonal })=> //endpoint para traer ruta
-			generalRequest(`${URL}/${ruta}/${route_id_ruta_zonal}`, 'GET'),
+		getIdRuta:(_,{ routeID })=> //endpoint para traer ruta
+			generalRequest(`${URL}/${ruta}/${routeID}`, 'GET'),
 
 		//EXAMPLE ENDPOINTS
 		/*allCategories: (_) =>
@@ -20,7 +20,7 @@ const resolvers = {
 		
 
 		
-	},
+	}
 	
 	
 };
