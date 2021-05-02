@@ -8,7 +8,8 @@
 	localidadDestino: String
 	nombreRuta: String
 	cantidadBuses: Int
-	barrioOrigen_final: String
+  barrioOrigen_final: String
+  velocidadPromedio: Int
 	paraderos:[String]
   }
 
