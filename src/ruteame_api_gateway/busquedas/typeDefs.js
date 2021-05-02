@@ -23,7 +23,7 @@
         codigo_definitivo_ruta_zonal: String
     
     }
-  type propiedades {
+  type rutapropiedades {
     id: Int
     type: String  
     properties:Properties
@@ -53,7 +53,7 @@ type Paradero
 
 
 export const rutasQueries = `
-    getIdRuta(routeID: Int!): propiedades
+    getIdRuta(routeID: Int!): rutapropiedades
     getIdparadero(routeID: Int!): [Paradero]
 `;
 

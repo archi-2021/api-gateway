@@ -8,52 +8,58 @@ import {
 	profileMutations,
 	profileQueries,
 	profileTypeDef
-} from './parkyer-getway/profile/typeDefs';
+} from './ruteame_api_gateway/profile/typeDefs';
 //julio_______________
 import {
 	rutasQueries,
 	rutasTypeDef
-} from './parkyer-getway/busquedas/typeDefs';
+} from './ruteame_api_gateway/busquedas/typeDefs';
+//informe
+	import{
+		informeQueries,
+		informeTypeDef
+	} from './ruteame_api_gateway/informe/typeDefs';
 //____________________
 
 import {
 	quejasMutations,
 	quejasQueries,
 	quejasTypeDef
-} from './parkyer-getway/Quejas/typeDefs';
+} from './ruteame_api_gateway/Quejas/typeDefs';
 import {
 	registerMutations,
 	registerQueries,
 	registerTypeDef
-} from './parkyer-getway/register/typeDefs';
+} from './ruteame_api_gateway/register/typeDefs';
 import {
 	vehicleMutations,
 	vehicleQueries,
 	vehicleTypeDef
-} from './parkyer-getway/vehicles/typeDefs';
+} from './ruteame_api_gateway/vehicles/typeDefs';
 import {
 	contactoMutations,
 	contactoQueries,
 	contactoTypeDef
-} from './parkyer-getway/contacto/typeDefs';
+} from './ruteame_api_gateway/contacto/typeDefs';
 import {
 	admin2Mutations,
 	admin2Queries,
 	admin2TypeDef
-} from './parkyer-getway/administration_two/typeDefs';
+} from './ruteame_api_gateway/administration_two/typeDefs';
 import {
 	UsuariosQueries,
 	UsuariosTypeDef
-} from './parkyer-getway/Usuarios/typeDefs';
+} from './ruteame_api_gateway/Usuarios/typeDefs';
 
-import categoryResolvers from './parkyer-getway/profile/resolvers';
-import QuejasResolvers from './parkyer-getway/Quejas/resolvers';
-import RegisterResolvers from './parkyer-getway/register/resolvers';
-import vehicleResolvers from './parkyer-getway/vehicles/resolvers';
-import contactoResolvers from './parkyer-getway/contacto/resolvers';
-import admin2Resolvers from './parkyer-getway/administration_two/resolvers';
-import UsuariosResolvers from './parkyer-getway/Usuarios/resolvers';
-import busquedasResolvers from './parkyer-getway/busquedas/resolvers';
+import categoryResolvers from './ruteame_api_gateway/profile/resolvers';
+import QuejasResolvers from './ruteame_api_gateway/Quejas/resolvers';
+import RegisterResolvers from './ruteame_api_gateway/register/resolvers';
+import vehicleResolvers from './ruteame_api_gateway/vehicles/resolvers';
+import contactoResolvers from './ruteame_api_gateway/contacto/resolvers';
+import admin2Resolvers from './ruteame_api_gateway/administration_two/resolvers';
+import UsuariosResolvers from './ruteame_api_gateway/Usuarios/resolvers';
+import busquedasResolvers from './ruteame_api_gateway/busquedas/resolvers';
+import informeResolvers from './ruteame_api_gateway/informe/resolvers';
 // merge the typeDefs
 const mergedTypeDefs = mergeSchemas(
 	[
@@ -65,7 +71,8 @@ const mergedTypeDefs = mergeSchemas(
 		contactoTypeDef,
 		admin2TypeDef,
 		UsuariosTypeDef,
-		rutasTypeDef
+		rutasTypeDef,
+		informeTypeDef
 	],
 	[
 		profileQueries,
@@ -75,7 +82,8 @@ const mergedTypeDefs = mergeSchemas(
 		contactoQueries,
 		admin2Queries,
 		UsuariosQueries,
-		rutasQueries
+		rutasQueries,
+		informeQueries
 	],
 	[
 		profileMutations,
@@ -100,6 +108,7 @@ export default makeExecutableSchema({
 		contactoResolvers,
 		admin2Resolvers,
 		UsuariosResolvers,
-		busquedasResolvers
+		busquedasResolvers,
+		informeResolvers
 	)
 });
