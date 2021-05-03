@@ -48,7 +48,8 @@ import {
 } from './ruteame_api_gateway/administration_two/typeDefs';
 import {
 	UsuariosQueries,
-	UsuariosTypeDef
+	UsuariosTypeDef,
+	UsuariosMutations
 } from './ruteame_api_gateway/Usuarios/typeDefs';
 
 import categoryResolvers from './ruteame_api_gateway/profile/resolvers';
@@ -91,7 +92,8 @@ const mergedTypeDefs = mergeSchemas(
 		registerMutations,
 		vehicleMutations,
 		contactoMutations,
-		admin2Mutations
+		admin2Mutations,
+		UsuariosMutations
 	]
 );
 

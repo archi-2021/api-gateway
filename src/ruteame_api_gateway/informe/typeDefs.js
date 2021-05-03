@@ -10,7 +10,8 @@
 	cantidadBuses: Int
   barrioOrigen_final: String
   velocidadPromedio: Int
-	paraderos:[String]
+  paraderos:[String]
+  fecha : String
   }
 
 
