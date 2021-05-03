@@ -9,12 +9,15 @@ const resolvers = {
 		//CUSTOM ENDPONTS
 		getUsuarios:(_)=> //endpoint para traer registros
 			generalRequest(`${URL}/${Lista}`, 'GET'),
-		
+		getUsuario:(_, { id })=> //endpoint para traer usuario
+			generalRequest(`${URL}/${Lista}/${id}`, 'GET'),
 	},
 	Mutation: {
 		//CUSTOM ENDPONTS
-		createUser:(_, {user})=>
+		crearUser:(_, {user})=>
 			generalRequest(`${URL}/${Lista}`,'POST',user),//endpoint para crear usuario
+		actualizarUser:(_,{id, user})=>
+			generalRequest(`${URL}/${Lista}/${id}`, 'PUT', user), //endpoint para editar usuario
 	}
 };
 
