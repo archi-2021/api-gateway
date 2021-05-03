@@ -17,7 +17,7 @@ const resolvers = {
 		categoryById: (_, { id }) =>
 			generalRequest(`${URL}/${id}`, 'GET'),*/
 		getIdparadero:(_,{ routeID })=> //endpoint para traer ruta
-		generalRequest(`${URL}/${paraderos}/${routeID}`, 'GET'),
+			generalRequest(`${URL}/${paraderos}/${routeID}`, 'GET'),
 		
 
 		

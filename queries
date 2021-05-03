@@ -1,0 +1,261 @@
+*************************************************
+===== Busqueda ====
+
+--- Obtener ruta ---
+query{
+  getIdRuta(routeID:2826){
+    properties{
+      tipo_ruta_zonal
+      localidad_destino_ruta_zonal
+      localidad_origen_ruta_zonal
+    }
+  }
+}
+
+--- Obtener paraderos de una ruta ---
+query{
+  getIdparadero(routeID:2826){
+    direccion_paradero
+    ruta_comercial
+    cenefa_paradero
+    nombre_paradero
+  }
+}
+
+
+*************************************************
+===== Informes =====
+
+--- Reporte ruta ---
+query{
+  getinfoById(id:2826){
+    idRuta
+    localidadOrigen
+    localidadDestino
+    nombreRuta
+    cantidadBuses
+    barrioOrigen_final
+    velocidadPromedio
+    paraderos
+    fecha
+  }
+}
+
+
+*************************************************
+===== Usuario =====
+
+--- Lista de usuarios ---
+query{
+  getUsuarios{
+    id
+    username
+    password
+  }
+}
+
+--- Obtener usuario por id ---
+query{
+  getUsuario(id:8){
+    id
+    username
+    password
+  }
+}
+
+--- Crear usuario ---
+mutation{
+  crearUser(user:{username:"katerine" password:"12345"}){
+    ID
+    message
+  }
+}
+
+--- Actualizar usuario ---
+mutation{
+  actualizarUser(id:33 user:{username:"moon"}){
+    message
+  }
+}
+
+--- Login ---
+mutation{
+  loginUser(user:{username:"german" password: "123123"})
+	{
+    token
+    message
+  }  
+}
+
+
+*************************************************
+===== Acciones de usuario =====
+
++++ Alarmas +++
+
+--- Lista de alarmas ---
+query{
+  getAllAlarms{
+    _id
+    idRoute
+    location
+  }
+}
+
+--- Obtener alarma por id ---
+query{
+  getAlarm(id:"609079de708ed26a8ce46093"){
+    _id
+    idRoute
+    location
+  }
+}
+
+--- Crear alarma ---
+mutation{
+  createAlarm(alarm:{idRoute:1234 location:"bogota"}){
+    _id
+    idRoute
+    location
+  }
+}
+
+--- Actualizar alarma ---
+mutation{
+  updateAlarm(id:"60907b0a708ed26a8ce46094" alarm:{idRoute:1234 location:"chapinero"}){
+    _id
+    idRoute
+    location
+  }
+}
+
+--- Borrar alarma ---
+mutation{
+  deleteAlarm(id:"608f2a25c75c060fe405aa77"){
+    _id
+    idRoute
+    location
+  }
+}
+
+
++++ Perfil +++
+
+--- Listar perfiles ---
+query{
+  getAllProfiles{
+    _id
+    name
+    email
+    image
+  }
+}
+
+--- Obtener perfil por id ---
+query{
+  getProfile(id:"60907c4b708ed26a8ce46095"){
+    _id
+    name
+    email
+    image
+  }
+}
+
+--- Crear perfil ---
+mutation{
+  createProfile(profile:{name:"diana" email:"test@gmail.com" image:""}){
+    _id
+    name
+    email
+    image
+  }
+}
+
+--- Actualizar perfil ---
+mutation{
+  updateProfile(id:"60907c4b708ed26a8ce46095" profile:{name:"katerine" email:"test@gmail.com" image:""}){
+    _id
+    name
+    email
+    image
+  }
+}
+
+--- Borrar perfil ---
+mutation{
+  deleteProfile(id:"60907c4b708ed26a8ce46095"){
+    _id
+    name
+    email
+    image
+  }
+}
+
+
++++ Usuario +++
+
+--- Listar todos los usuarios ---
+query{
+  getAllUsers{
+    _id
+    idUser
+    profile
+		alarm
+    favorites
+    default
+  }
+}
+
+--- Obtener usuario por id ---
+query{
+  getUser(id:"6090805fecece215acc15215"){
+    _id
+    idUser
+    profile
+		alarm
+    favorites
+    default
+  }
+}
+
+
+--- Crear usuario ---
+mutation{
+  createUser( user:{idUser:38 profile:"test"}){
+    _id
+    idUser
+    profile
+    alarm
+    favorites
+    default
+  }
+}
+
+--- Actualizar usuario ---
+mutation{
+  updateUser(id:"6090805fecece215acc15215" user:{idUser:38 profile:"testing"}){
+    _id
+    idUser
+    profile
+    alarm
+    favorites
+    default
+  }
+}
+
+--- Borrar usuario ---
+mutation{
+  deleteUser(id:"60907ff8708ed26a8ce46099"){
+    _id
+    idUser
+    profile
+    alarm
+    favorites
+    default
+  }
+}
+
+
+
+*************************************************
+===== Rutas y Buses =====

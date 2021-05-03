@@ -29,38 +29,38 @@ const resolvers = {
 		getAllProfiles:(_) => 
 			generalRequest(`${URL}/${profile_url}`, 'GET'),
 		
-		getProfile:(_, {profileId}) =>
-			generalRequest(`${URL}/${profile_url}/${profileId}`, 'GET'),
+		getProfile:(_, {id}) =>
+			generalRequest(`${URL}/${profile_url}/${id}`, 'GET'),
 		
 		getAllUsers:(_) => 
 			generalRequest(`${URL}/${user_url}`, 'GET'),
 		
-		getUser:(_, {userId}) =>
-			generalRequest(`${URL}/${user_url}/${userId}`, 'GET'),		
+		getUser:(_, {id}) =>
+			generalRequest(`${URL}/${user_url}/${id}`, 'GET'),		
 	},
 
 	Mutation:{
 
 		createAlarm: (_, { alarm }) =>
 			generalRequest(`${URL}/${alarm_url}`, 'POST', alarm),
-		updateAlarm: (_, { alarmId, alarm }) =>
-			generalRequest(`${URL}/${alarm_url}/${alarmId}`, 'PUT', alarm),
-		deleteAlarm: (_, { alarmId }) =>
-			generalRequest(`${URL}/${alarm_url}/${alarmId}`, 'DELETE'),
+		updateAlarm: (_, { id, alarm }) =>
+			generalRequest(`${URL}/${alarm_url}/${id}`, 'PUT', alarm),
+		deleteAlarm: (_, { id }) =>
+			generalRequest(`${URL}/${alarm_url}/${id}`, 'DELETE'),
 		
 		createProfile: (_, { profile }) =>
 			generalRequest(`${URL}/${profile_url}`, 'POST', profile),
-		updateProfile: (_, { profileId, profile }) =>
-			generalRequest(`${URL}/${profile_url}/${profileId}`, 'PUT', profile),
-		deleteProfile: (_, { profileId }) =>
-			generalRequest(`${URL}/${profile_url}/${profileId}`, 'DELETE'),
+		updateProfile: (_, { id, profile }) =>
+			generalRequest(`${URL}/${profile_url}/${id}`, 'PUT', profile),
+		deleteProfile: (_, { id }) =>
+			generalRequest(`${URL}/${profile_url}/${id}`, 'DELETE'),
 
 		createUser: (_, { user }) =>
 			generalRequest(`${URL}/${user_url}`, 'POST', user),
-		updateUser: (_, { userId, user }) =>
-			generalRequest(`${URL}/${user_url}/${userId}`, 'PUT', user),
-		deleteUser: (_, { userId }) =>
-			generalRequest(`${URL}/${user_url}/${userId}`, 'DELETE'),
+		updateUser: (_, { id, user }) =>
+			generalRequest(`${URL}/${user_url}/${id}`, 'PUT', user),
+		deleteUser: (_, { id }) =>
+			generalRequest(`${URL}/${user_url}/${id}`, 'DELETE'),
 	}
 };
 

@@ -19,7 +19,7 @@ const resolvers = {
 		crearUser:(_, {user})=>
 			generalRequest(`${URL}/${Lista}`,'POST',user),//endpoint para crear usuario
 		actualizarUser:(_,{id, user})=>
-				generalRequest(`${URL}/${Lista}/${id}`, 'PUT', user), //endpoint para editar usuario
+				generalRequest(`${URL}/${Lista}/${id}`, 'PATCH', user), //endpoint para editar usuario
 		loginUser:(_,{user})=>
 			generalRequest(`${URL}/${auth}/${Login}`, 'POST', user), //endpoint para editar usuario
 

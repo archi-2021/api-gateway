@@ -33,8 +33,8 @@ export const accionesUsuarioTypeDef =  `
   }
 
   input UserInfoInput{
-    idUser: Int!
-    profile: String!
+    idUser: Int
+    profile: String
     alarm: [String]
     favorites: [Int]
     default: [Int]
@@ -48,7 +48,7 @@ export const accionesUsuarioQueries = `
   getAllAlarms: [Alarm]
   getAlarm(id: String): Alarm
   getAllProfiles: [Profile]
-  getProfile(profileId: String!): Profile
+  getProfile(id: String!): Profile
   getAllUsers: [UserInfo]
   getUser(id: String!): UserInfo
     
@@ -61,7 +61,7 @@ export const accionesUsuarioMutations = `
   createProfile(profile: ProfileInput!): Profile
   updateProfile(id: String!, profile: ProfileInput!): Profile
   deleteProfile(id: String!): Profile
-  createUser(user: UserInfoInput!): UserInfo
+  createUser(user: UserInfoInput): UserInfo
   updateUser(id: String!, user: UserInfoInput!): UserInfo
   deleteUser(id: String!): UserInfo
 `;
