@@ -18,6 +18,14 @@ input UserDataUpdate {
 type UpdateMessage {
     message: String!
 }
+input UserDataLogin {
+    username: String!
+    password: String!
+}
+type LoginMessage {
+    token: String
+    message: String!
+}
 `;
 
 
@@ -28,4 +36,5 @@ export const UsuariosQueries = `
 export const UsuariosMutations = `
     crearUser(user: UserDataCreate!): Create
     actualizarUser(id: Int!, user: UserDataUpdate!): UpdateMessage!
+    loginUser(user: UserDataLogin!): LoginMessage!
 `;
