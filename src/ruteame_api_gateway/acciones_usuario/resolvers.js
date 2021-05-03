@@ -27,13 +27,13 @@ const resolvers = {
 			}),
 		
 		getAllProfiles:(_) => 
-			generalRequest(`${URL}/${profile_url}/list`, 'GET'),
+			generalRequest(`${URL}/${profile_url}`, 'GET'),
 		
 		getProfile:(_, {profileId}) =>
 			generalRequest(`${URL}/${profile_url}/${profileId}`, 'GET'),
 		
 		getAllUsers:(_) => 
-			generalRequest(`${URL}/${user_url}/list`, 'GET'),
+			generalRequest(`${URL}/${user_url}`, 'GET'),
 		
 		getUser:(_, {userId}) =>
 			generalRequest(`${URL}/${user_url}/${userId}`, 'GET'),		
@@ -42,21 +42,21 @@ const resolvers = {
 	Mutation:{
 
 		createAlarm: (_, { alarm }) =>
-			generalRequest(`${URL}/${alarm_url}/create`, 'POST', alarm),
+			generalRequest(`${URL}/${alarm_url}`, 'POST', alarm),
 		updateAlarm: (_, { alarmId, alarm }) =>
 			generalRequest(`${URL}/${alarm_url}/${alarmId}`, 'PUT', alarm),
 		deleteAlarm: (_, { alarmId }) =>
 			generalRequest(`${URL}/${alarm_url}/${alarmId}`, 'DELETE'),
 		
 		createProfile: (_, { profile }) =>
-			generalRequest(`${URL}/${profile_url}/create`, 'POST', profile),
+			generalRequest(`${URL}/${profile_url}`, 'POST', profile),
 		updateProfile: (_, { profileId, profile }) =>
 			generalRequest(`${URL}/${profile_url}/${profileId}`, 'PUT', profile),
 		deleteProfile: (_, { profileId }) =>
 			generalRequest(`${URL}/${profile_url}/${profileId}`, 'DELETE'),
 
 		createUser: (_, { user }) =>
-			generalRequest(`${URL}/${user_url}/create`, 'POST', user),
+			generalRequest(`${URL}/${user_url}`, 'POST', user),
 		updateUser: (_, { userId, user }) =>
 			generalRequest(`${URL}/${user_url}/${userId}`, 'PUT', user),
 		deleteUser: (_, { userId }) =>
