@@ -19,6 +19,13 @@ import {
 		informeQueries,
 		informeTypeDef
 	} from './ruteame_api_gateway/informe/typeDefs';
+
+//diana
+import{
+	accionesUsuarioTypeDef,
+	accionesUsuarioQueries,
+	accionesUsuarioMutations
+} from './ruteame_api_gateway/acciones_usuario/typeDefs';	
 //____________________
 
 import {
@@ -61,6 +68,7 @@ import admin2Resolvers from './ruteame_api_gateway/administration_two/resolvers'
 import UsuariosResolvers from './ruteame_api_gateway/Usuarios/resolvers';
 import busquedasResolvers from './ruteame_api_gateway/busquedas/resolvers';
 import informeResolvers from './ruteame_api_gateway/informe/resolvers';
+import accionesUsuarioResolvers from './ruteame_api_gateway/acciones_usuario/resolvers';
 // merge the typeDefs
 const mergedTypeDefs = mergeSchemas(
 	[
@@ -73,7 +81,8 @@ const mergedTypeDefs = mergeSchemas(
 		admin2TypeDef,
 		UsuariosTypeDef,
 		rutasTypeDef,
-		informeTypeDef
+		informeTypeDef,
+		accionesUsuarioTypeDef
 	],
 	[
 		profileQueries,
@@ -84,7 +93,8 @@ const mergedTypeDefs = mergeSchemas(
 		admin2Queries,
 		UsuariosQueries,
 		rutasQueries,
-		informeQueries
+		informeQueries,
+		accionesUsuarioQueries
 	],
 	[
 		profileMutations,
@@ -93,7 +103,8 @@ const mergedTypeDefs = mergeSchemas(
 		vehicleMutations,
 		contactoMutations,
 		admin2Mutations,
-		UsuariosMutations
+		UsuariosMutations,
+		accionesUsuarioMutations
 	]
 );
 
@@ -111,6 +122,7 @@ export default makeExecutableSchema({
 		admin2Resolvers,
 		UsuariosResolvers,
 		busquedasResolvers,
-		informeResolvers
+		informeResolvers,
+		accionesUsuarioResolvers
 	)
 });
